@@ -28,6 +28,11 @@ RUN set -x \
     && php composer-setup.php --quite --install-dir=/usr/local/sbin --filename=composer \
     && rm composer-setup.php
 
+# Install wp-cli
+RUN set -x \
+    && curl -o /usr/local/sbin/wp -fSL "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar" \
+    && chmod +x /usr/local/sbin/wp
+
 ARG WORDPRESS_VERSION=4.6.1
 ARG WORDPRESS_SHA1=027e065d30a64720624a7404a1820e6c6fff1202
 
