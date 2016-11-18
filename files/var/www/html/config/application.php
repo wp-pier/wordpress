@@ -84,7 +84,7 @@ define( 'DISALLOW_FILE_EDIT', true );
 /**
  * Put custom settings in additional-settings.php
  */
-if ( is_file( dirname( __FILE__ ) . '/additional-settings.php'; ) ) {
+if ( is_file( dirname( __FILE__ ) . '/additional-settings.php' ) ) {
 	require_once dirname( __FILE__ ) . '/additional-settings.php';
 }
 

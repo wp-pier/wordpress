@@ -45,5 +45,10 @@ RUN set -x \
 
 # Copy all needed files
 COPY /files/ /
+RUN chmod u+x /usr/local/bin/docker-entrypoint.sh
 
 VOLUME /var/www/html
+
+# ENTRYPOINT resets CMD
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["php-fpm"]
