@@ -1,0 +1,3 @@
+# run website maintenance task
+# min   hour    day     month   weekday command
+*/1     *       *       *       *       php /var/www/html/public/wp/wp-cron.php
