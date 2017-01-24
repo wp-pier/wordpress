@@ -1,4 +1,4 @@
-FROM php:7.0-fpm-alpine
+FROM php:7.1-fpm-alpine
 
 # Install the PHP extensions we need
 RUN apk add --no-cache --virtual .phpext-build-deps \
@@ -33,8 +33,9 @@ RUN set -x \
     && curl -o /usr/local/sbin/wp -fSL "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar" \
     && chmod +x /usr/local/sbin/wp
 
-ARG WORDPRESS_VERSION=4.6.1
-ARG WORDPRESS_SHA1=027e065d30a64720624a7404a1820e6c6fff1202
+# https://wordpress.org/download/release-archive/
+ARG WORDPRESS_VERSION=4.7.1
+ARG WORDPRESS_SHA1=8e56ba56c10a3f245c616b13e46bd996f63793d6
 
 # Download Current Version of Wordpress
 RUN set -x \
